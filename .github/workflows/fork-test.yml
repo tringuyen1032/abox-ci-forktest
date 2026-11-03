@@ -1,0 +1,10 @@
+name: Fork test
+on: [pull_request]
+permissions:
+  contents: read
+jobs:
+  hello:
+    runs-on: abox
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "this must never run for a fork PR"
